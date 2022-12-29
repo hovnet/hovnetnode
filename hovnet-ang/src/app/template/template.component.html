@@ -1,0 +1,61 @@
+<p class="title">{{Title}}</p>
+
+<div class="main1">
+    <div id="div1"  class="form-group" style="direction:rtl;width: 360px;height: 130%;text-align: right;padding-right: 0.8cm;">
+        <form action="/action_page.php">
+            <br>
+            <label for="fhy">מספר חייבים:</label>
+            <input [(ngModel)]="debtorsCount"  id="fyv" name="fyv" Placeholder="הכנס מספר חייבים לריצה נוכחית" > <br><br>
+            <label for="fact">מספר פעולה:</label>
+            <input [(ngModel)]="ActionNum"  id="fact" name="fact" Placeholder="הכנס מספר חייבים לריצה נוכחית" > <br><br>
+            <label for="fhlp">הכנס הוצלפ:</label>
+            <input [(ngModel)]="hotzlap"  id="fhlp" name="fhlp" Placeholder="הכנס מספר חייבים לריצה נוכחית" > <br><br>
+        
+        <!-- <input type="text" id="fname" name="fname"><br><br> -->
+        <!-- <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit"> -->
+      </form>
+
+        <!-- <div style="background-color:aquamarine;padding-right: 1.7em;"> -->
+        <!-- <br> -->
+        <!-- <span class="input-group-addon"> מספר חייבים  </span> -->
+        <!-- <input [(ngModel)]="debtorsCount" Placeholder="הכנס מספר חייבים לריצה נוכחית"  name="dd"> -->
+        <!-- <span class="input-group-addon"> מספר פעולה  </span> -->
+        <!-- <br>
+        <input [(ngModel)]="ActionNum" Placeholder="הכנס פעולה"  name="dd1">
+        <span class="input-group-addon"> מספר הוצלפ  </span>
+        <input [(ngModel)]="hotzlap" Placeholder="הכנס הוצלפ"  name="dd2"> -->
+    
+    </div>
+
+    <div id="div2" ondrop="drop(event, 'div2')" ondragover="allowDrop(event, 'div2')">
+        <p class="conditions">תנאים</p>
+    </div>
+    <!-- <div id="div3" ondrop="drop(event, 'div3')" ondragover="allowDrop(event, 'div3')"></div>
+    <div id="div4" ondrop="drop(event, 'div4')" ondragover="allowDrop(event, 'div4')"></div> -->
+    <div  class="btn">
+        <mat-spinner  [diameter]="32" class="mat-spinner" *ngIf="isWorking"></mat-spinner>
+        <button (click)="SelectHayavimLeIkul()">החל ריצה</button>
+    </div>
+    <div id="div3" ondrop="drop(event, 'div3')" ondragover="allowDrop(event, 'div3')"  style="direction:rtl;width: 360px;height: 130%;text-align: right;padding-right: 0.8cm;">
+        <form action="/action_page.php">
+            <br>
+            <label for="ftr">תחילת ריצה:</label>
+            <input [(ngModel)]="MeTar"  id="ftr" name="ftr" Placeholder="הכנס מספר חייבים לריצה נוכחית" class="inp"> <br>
+            <label for="fts">סיום ריצה:</label>
+            <input [(ngModel)]="AdTar"  id="fts" name="fts" Placeholder="הכנס מספר חייבים לריצה נוכחית" class="inp"> <br>
+            <label for="ftm">משך ריצה:</label>
+            <input [(ngModel)]="Meshech"  id="ftm" name="ftm" Placeholder="הכנס מספר חייבים לריצה נוכחית" class="inp"> <br>
+            <label for="fkt">כמות תיקים בהפקה:</label>
+            <input [(ngModel)]="KamutInHafaka"  id="fkt" name="fkt" Placeholder="הכנס מספר חייבים לריצה נוכחית" class="inp"> <br>
+        
+        <!-- <input type="text" id="fname" name="fname"><br><br> -->
+        <!-- <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit"> -->
+      </form>
+
+    </div>
+    <!-- <div id="div4" ondrop="drop(event, 'div4')" ondragover="allowDrop(event, 'div4')"></div> -->
+</div>

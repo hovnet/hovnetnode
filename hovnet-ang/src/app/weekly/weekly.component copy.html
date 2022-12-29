@@ -1,0 +1,88 @@
+<p class="title">{{Title}}</p>
+
+<div class="main1">
+    <input type="text" [(ngModel)]="debtorsCount"  id="fda" name="fda" Placeholder="הכנס מספר חייבים לריצה נוכחית" style="float: right;"> <br><br>
+
+<div id="div1"  class="form-group" style="direction:rtl;width: 360px;height: 130%;text-align: right;padding-right: 0.8cm;">
+       
+    <div *ngFor="let input of Prop; let i = index;">
+        <br>
+        <label for="fhy">{{Prop[i]['KoteretTofes']}}({{Prop[i]['MisparTofes']}})</label>
+        <!-- <input type="checkbox" [(ngModel)]="Prop[i]['KoteretTofes']" name="fyv1"> -->
+        <input type="checkbox" [(ngModel)]="chk[Prop[i]['MisparTofes']]" name="fyv" style="float: left;">
+    </div>
+
+
+    <form action="/action_page.php">
+
+
+            <br>
+            <!-- <label for="fhy">עיקולי רכב בתקשורת:</label>
+            <input type="checkbox" [(ngModel)]="chk[0]"  id="fyv" name="fyv" Placeholder="הכנס מספר חייבים לריצה נוכחית" style="float: left;"> <br><br>
+            <label for="fact">עיקולי מינהל מקרקעי ישראל בתקשורת:</label>
+            <input type="checkbox" [(ngModel)]="chk[1]"  id="fact" name="fact" Placeholder="הכנס מספר חייבים לריצה נוכחית" style="float: left;"> <br><br>
+            <label for="fhlp">רשימת נכסים לכינוס:</label>
+            <input type="checkbox" [(ngModel)]="chk[2]"  id="fhlp" name="fhlp" Placeholder="הכנס מספר חייבים לריצה נוכחית" style="float: left;"> <br><br> -->
+        
+            <!-- <form action="/action_page.php" method="get">
+                <input type="checkbox" name="vehicle1" value="Bike">
+                <label for="vehicle1"> I have a bike</label><br>
+                <input type="checkbox" name="vehicle2" value="Car">
+                <label for="vehicle2"> I have a car</label><br>
+                <input type="checkbox" name="vehicle3" value="Boat" checked>
+                <label for="vehicle3"> I have a boat</label><br><br>
+                <input type="submit" value="Submit">
+              </form> -->
+        
+        
+            <!-- <input type="text" id="fname" name="fname"><br><br> -->
+        <!-- <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit"> -->
+      </form>
+
+        <!-- <div style="background-color:aquamarine;padding-right: 1.7em;"> -->
+        <!-- <br> -->
+        <!-- <span class="input-group-addon"> מספר חייבים  </span> -->
+        <!-- <input [(ngModel)]="debtorsCount" Placeholder="הכנס מספר חייבים לריצה נוכחית"  name="dd"> -->
+        <!-- <span class="input-group-addon"> מספר פעולה  </span> -->
+        <!-- <br>
+        <input [(ngModel)]="ActionNum" Placeholder="הכנס פעולה"  name="dd1">
+        <span class="input-group-addon"> מספר הוצלפ  </span>
+        <input [(ngModel)]="hotzlap" Placeholder="הכנס הוצלפ"  name="dd2"> -->
+    
+    </div>
+<!-- <br><br> -->
+    <!-- <div id="div2" ondrop="drop(event, 'div2')" ondragover="allowDrop(event, 'div2')">
+        <p class="conditions">תנאים</p>
+    </div> -->
+    <!-- <div id="div3" ondrop="drop(event, 'div3')" ondragover="allowDrop(event, 'div3')"></div>
+    <div id="div4" ondrop="drop(event, 'div4')" ondragover="allowDrop(event, 'div4')"></div> -->
+<div  class="btn">
+    <mat-spinner  [diameter]="32" class="mat-spinner" *ngIf="isWorking"></mat-spinner>
+    <button (click)="ExecutAction()">החל ריצה</button>
+</div>
+<!-- <br><br> -->
+<div id="div3" ondrop="drop(event, 'div3')" ondragover="allowDrop(event, 'div3')"  style="direction:rtl;width: 360px;height: 130%;text-align: right;padding-right: 0.8cm;">
+    <form action="/action_page.php">
+        <!-- <br> -->
+        <!-- <label for="ftr">תחילת ריצה:</label> -->
+        <span>תחילת ריצה<input [ngModel]="jobStarted"  id="ftr" name="ftr" class="inp"></span> <br>
+        <label for="fts">סיום ריצה:</label>
+        <input [ngModel]="jobEtarted"  id="fts" name="fts" class="inp"> <br>
+        
+        <label for="ftm">משך ריצה:</label>
+        <input [ngModel]="jobDtarted"  id="ftm" name="ftm" class="inp"> <br>
+        
+        <label for="fkt">כמות תיקים בהפקה:</label>
+        <input [(ngModel)]="tikimLeikul"  id="fkt" name="fkt"  class="inp"> <br>
+    
+    <!-- <input type="text" id="fname" name="fname"><br><br> -->
+    <!-- <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit"> -->
+    </form>
+
+</div>
+    <!-- <div id="div4" ondrop="drop(event, 'div4')" ondragover="allowDrop(event, 'div4')"></div> -->
+</div>

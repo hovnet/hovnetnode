@@ -1,0 +1,141 @@
+<!-- <div> -->
+  <mat-toolbar class="custom-toolbar">
+    <!-- <mat-toolbar class="custom-toolbar" style="font-size:16px;background-color:brown;color: white;"> -->
+      <!-- <mat-toolbar-row> -->
+  <mat-toolbar-row  class="custom-toolbar-row">
+    <!-- <mat-toolbar-row  dir = "rtl" style="direction: rtl;"> -->
+  <button mat-icon-button>
+    <mat-icon (click)="sidenav.toggle()">
+      menu
+    </mat-icon>
+  </button>
+  <h1 style="font-size:42px;">חובנט</h1>
+  <span class="menu-spacer"></span>
+  <!-- <h1 style="font-size:42px;">{{GlobalVars.ShemMisrad}}</h1> -->
+  <a mat-button [matMenuTriggerFor]="settingsMenu">קובץ</a>
+  <!-- <a mat-button style="font-size:16px" [matMenuTriggerFor]="settingsMenu">קובץ</a> -->
+    <mat-menu #settingsMenu>
+      <a mat-menu-item [routerLink]="'/'"> Exit </a>
+      </mat-menu>
+  <a mat-button [matMenuTriggerFor]="settingsActions">פעולות</a>
+      <mat-menu #settingsActions>
+      <button mat-menu-item [routerLink]="'/TG'"> רכב </button>
+      <button mat-menu-item [routerLink]="'/'"> מינהל מקרקעי ישראל </button>
+      <button mat-menu-item [routerLink]="'/'"> מס ערך מוסף </button>
+      <button mat-menu-item [routerLink]="'/'"> מס הכנסה </button>
+    </mat-menu>
+
+        <a mat-button [matMenuTriggerFor]="settingsMotions">בקשות</a>
+        <!-- <button type="button" disabled [matMenuTriggerFor]="settingsMenu">Disabled menu</button> -->
+    
+            <mat-menu #settingsMotions>
+            <button mat-menu-item [routerLink]="'/'"> צווי מידע - מקורות הכנסה </button>
+            <button mat-menu-item [routerLink]="'/'"> צווי מידע - מקרקעין </button>
+            <button mat-menu-item [routerLink]="'/'"> עיקול ברישום מטלטלין </button>
+            <button mat-menu-item [routerLink]="'/'"> הגבלות </button>
+            <button mat-menu-item [routerLink]="'/'"> עיקולי משכורת </button>
+          </mat-menu>
+    
+    <a mat-button [routerLink]="'/create-account'"> הליכים </a>
+      <a mat-button [routerLink]="'/contacts'"> מדיה </a>
+
+    <a mat-button [matMenuTriggerFor]="settingsWeeks">תוכנית שבועית</a>
+    <mat-menu #settingsWeeks>
+        <button mat-menu-item [routerLink]="'W17/1'"> שבוע 01-07 </button>
+        <button mat-menu-item [routerLink]="'W17/2'"> שבוע 08-14 </button>
+        <button mat-menu-item [routerLink]="'/W17/3'"> שבוע 15-21 </button>
+        <button mat-menu-item [routerLink]="'/W17/4'"> שבוע סוף-22 </button>
+    </mat-menu>
+      
+      <a mat-button [routerLink]="'/create-contact'"> דוחות עבודה </a>
+      <a mat-button [routerLink]="'/activities'"> דוחות חריגים </a>
+      <a mat-button [routerLink]="'/create-activity'"> בדיקות </a>
+
+      <a mat-button [matMenuTriggerFor]="settingsManta">פעולות תחזוקה</a>
+        <mat-menu #settingsManta>
+          <button mat-menu-item [routerLink]="'/'"> קישור טבלאות </button>
+          <button mat-menu-item [routerLink]="'/'"> יבוא קבצים</button>
+          <button mat-menu-item [routerLink]="'/'"> טסטים אריק </button>
+          <button mat-menu-item [routerLink]="'/'"> מימשק פעילים </button>
+          <button mat-menu-item [routerLink]="'/'"> גיבויים </button>
+          <button mat-menu-item [routerLink]="'/'"> רישום משימות </button>
+          <button mat-menu-item [routerLink]="'/'"> רישום חוקות </button>
+          <button mat-menu-item [routerLink]="'/'"> רישום איתחול </button>
+        </mat-menu>
+      
+      <a mat-button [routerLink]="'/Test'"> חלונות </a>
+      <a mat-button [routerLink]="'TB'"> אודות </a>
+      <!-- <div style="direction: rtl;font-size:20px"> -->
+
+      <!-- <a mat-button style="direction: lt;float: left;color:red" [routerLink]="'/create-activity'"> פדר - משרד עורכי דין </a> -->
+      <!-- <a mat-button [routerLink]="'/create-activity'"> {{GlobalVars.ShemMisrad}} </a> -->
+      <!-- {{GlobalVars.ShemMisrad}} -->
+      <!-- <label style="direction: ltr">{{GlobalVars.ShemMisrad}}</label> -->
+    <!-- </div> -->
+  </mat-toolbar-row>
+  <!-- <mat-toolbar-row> -->
+      <!-- <span style="font-size: x-large;direction: rtl;">הפעלת הליכים רוחביים בהוצאה לפועל</span> -->
+  <!-- </mat-toolbar-row> -->
+</mat-toolbar>
+<!-- </div> -->
+<!-- <h3 style="font-size:18px;background-color: cornflowerblue;color:whitesmoke; text-align: center;">בן יעקב שוימר דולב , משרד עורכי דין</h3> -->
+<h3 style="font-size:18px;background-color: cornflowerblue;color:whitesmoke; text-align: center;">{{ar}}</h3>
+<div>
+<mat-sidenav-container>
+  <!-- <mat-sidenav #sidenav mode="side" role="navigation"> -->
+    <mat-sidenav #sidenav mode="side" opened  role="navigation" >
+      <mat-nav-list>
+        <!-- <mat-nav-list style="direction: ltr;"> -->
+          <mat-list-item [matMenuTriggerFor]="menu">
+          <a mat-list-item></a>
+          <a matline>עיקולים</a>
+          <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
+          </mat-list-item>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item [routerLink]="'/TG'" >עיקולי רכב בתקשורת</button>
+              <!-- <button mat-menu-item (click)="onSidenavClose()">רכב</button> -->
+              <button mat-menu-item [routerLink]="'/TG'">עיקולי מינהל  מקרקעי ישראל בתקשורת</button>
+              <button mat-menu-item [routerLink]="'/TG'">עיקולי מס ערך מוסף בתקשורת</button>
+              <button mat-menu-item [routerLink]="'/TG'">עיקולי מס הכנסה בתקשורת</button>
+              <button mat-menu-item [routerLink]="'/TG'">רשימת נכסים מיועדים לכינוס נכסים</button>
+            </mat-menu>
+    
+        <!-- <a mat-list-item [routerLink]="'/TG'"> עיקולים </a> -->
+        <a mat-list-item [routerLink]="'/create-account'"> בקשות </a>
+        <a mat-list-item [routerLink]="'/contacts'"> הליכים </a>
+        <a mat-list-item [routerLink]="'/activities'"> דוחות עבודה </a>
+        <a mat-list-item [routerLink]="'/TD'"> דוחות חריגים </a>
+        <a mat-list-item [routerLink]="'/TST'"> תחזוקה </a>
+        <a mat-list-item [routerLink]="'/W17/1'"> שבוע 01-07 </a>
+        <a mat-list-item [routerLink]="'/W17/2'"> שבוע 08-14 </a>
+        <a mat-list-item [routerLink]="'/W17/3'"> שבוע 15-21 </a>
+        <a mat-list-item [routerLink]="'/W17/4'"> שבוע 22-30 </a>
+        <a mat-list-item [routerLink]="'/W17/5'"> דוחות חריגים רמת תיקים  </a>
+        <a mat-list-item [routerLink]="'/W17/6'"> דוחות חריגים רמת חייבים </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>יציאה</a>
+     <!-- <mat-list-item [matMenuTriggerFor]="menu">
+      <mat-icon>unfold_more</mat-icon>
+      <a matline>Example</a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onSidenavClose()">View profile</button>
+    <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
+    </mat-menu> -->
+    
+     </mat-nav-list>
+   </mat-sidenav>
+   <mat-sidenav-content style="height: 86vh;">
+<!-- <br> -->
+       <router-outlet></router-outlet >
+        <!-- <h1>{{GlobalVars.ShemMisrad}}</h1> -->
+
+     <!-- </div> -->
+   </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer>
+   <!-- <div>
+    <h1 style="font-size:42px;">וירטוריה</h1>
+  </div> -->
+</app-footer>
+
+</div>

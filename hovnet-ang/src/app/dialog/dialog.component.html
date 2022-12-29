@@ -1,0 +1,20 @@
+<div>
+
+  <button mat-raised-button (click)="openDialog()">Open modal</button>
+  <div mat-dialog-actions>
+ </div><br />
+<!-- <div *ngIf="email">
+  You signed up with: <p></p>
+</div> -->
+</div>
+
+<mat-dialog-content>
+  my-dialog-content works!
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <ng-container ngProjectAs="btn-close">
+  <button mat-button color="warn" (click)="dialog.closeAll()">Close</button>
+</ng-container>
+  <button mat-button color="primary" type="submit" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>

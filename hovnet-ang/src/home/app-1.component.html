@@ -1,0 +1,30 @@
+<!-- <mat-toolbar color="primary" class="fixed-header" > -->
+
+
+
+<div class="sticky">
+<h1 style="color:darkblue;text-align:center;">Hovenet Web Version 1.1</h1>
+<div style="margin:0 auto;width: 60%;padding-top: 0.5em;direction: rtl;">
+    <h1 style=color:darkblue;text-align:center;>
+      {{fortesting}}
+    </h1>
+    </div> 
+    <div style="text-align:center;padding-right:1em;">
+      <nav class="nav">
+        <a [routerLink]="['/TG']">עיקולי צד גימל</a>
+        <span>---</span>
+        <a [routerLink]="['/TD']">בקשות זוכה</a>
+        <span>---</span>
+        <a [routerLink]="['/TE']">בקשות מוטבים</a>
+        <span>---</span>
+        <a [routerLink]="['/TEN']">כניסה</a>
+        <span>---</span>
+        <a [routerLink]="['/CHK']">בדיקות</a>
+        <br><br>
+      </nav>
+    </div>
+    <br>
+</div>
+<!-- </mat-toolbar> -->
+
+<router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+ .mat-header-row {
+   position: sticky;
+   top: 0;
+   background-color: inherit;
+   font-size: xx-large;
+   height: 0.5em;
+}
+
+.mat-header-cell{
+   font-size: medium;
+}
+
+.mat-row{
+   height:fit-content;
+}
+TT{
+   padding-top:15px;}
+
+table {
+   width: 100%;
+   overflow-x: auto;
+   overflow-y: hidden;
+   min-width: 500px;
+}
+
+.titleM{
+   display: flex;
+   flex-direction: row;
+   justify-content: right;
+   margin-top: 20px;
+   }
+
+/* th.mat-header-cell {
+   text-align: left;
+   max-width: 300px;
+} */

@@ -1,0 +1,64 @@
+.mat-raised-button {
+    padding: 0 6px 0 6px;
+    margin: 6px 8px 6px 8px;
+    min-width: 80px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration:none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+ }
+ .mat-menu-item{
+    max-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background-color: lemonchiffon;
+  }
+  .h3{
+      background-color: cornflowerblue;
+  }
+  .custom-toolbar {
+    /* background-color: red; */
+    /* padding: 0 5px; */
+    direction: rtl;    
+    /* font-size:18px;
+    background-color:brown;
+    color: white;     */
+  } 
+  .custom-toolbar-row {
+    padding: 0 5px;
+    direction: ltr;    
+    font-size:24px;
+    background-color:brown;
+    color: white;    
+  }
+  .fixed-header {
+    position:sticky;
+    position:-webkit-sticky; /* For macOS/iOS Safari */;
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+    font-size:24px;
+    background-color:brown;
+    color: white;
+    }
+
+    /* button {
+      margin-right: 1vw;
+      background: #4285F4;
+      color: white;
+      font-size: 18px;
+      height: auto;
+      width: auto;
+  }     */
+  .mbon {
+    /* margin-right: 1vw; */
+    /* background:brown;
+    color: white; */
+    font-size: 18px;
+    /* height: auto;
+    width: auto; */
+}

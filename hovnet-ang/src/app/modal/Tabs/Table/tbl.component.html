@@ -1,0 +1,50 @@
+<div style="direction: rtl;padding-right: 1.7em;position: relative;">
+    <p  class="titleM" >מס הליכים בסריקה : {{dataSource.length}}</p>
+</div>
+
+<div>
+<mat-table [dataSource]= "dataSource" style="direction: rtl;padding-right: 1.7em;">
+
+  <ng-container  matColumnDef="CaseDisplayIdentifier">
+    <mat-header-cell *matHeaderCellDef> הוצלפ</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.CaseDisplayIdentifier}}</mat-cell>
+  </ng-container>
+
+  <ng-container  matColumnDef="OrdinalNumber">
+    <mat-header-cell *matHeaderCellDef>מס חייב</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.OrdinalNumber}}</mat-cell>
+  </ng-container>
+
+  <ng-container  matColumnDef="SourceCaseSequenceNum">
+    <mat-header-cell *matHeaderCellDef>  הליך ביצוע</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.SourceCaseSequenceNum}}</mat-cell>
+  </ng-container>
+
+  <ng-container  matColumnDef="ExecutionProceedingStateID" style="direction: rtl;">
+    <mat-header-cell *matHeaderCellDef>סטאטוס הליך</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.ExecutionProceedingStateID}}</mat-cell>
+  </ng-container>
+
+    <ng-container  matColumnDef="ExecutionDate"  style="direction: rtl;">
+    <mat-header-cell *matHeaderCellDef>תאריך ביצוע</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.ExecutionDate | date: 'dd/MM/yyyy'}}</mat-cell>
+    <!-- <mat-cell *matCellDef="let ExecProc">{{ExecProc.ExecutionDate}}</mat-cell> -->
+  </ng-container>
+
+  <ng-container  matColumnDef="ImportDate">
+    <mat-header-cell *matHeaderCellDef>תאריך יבוא</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.ImportDate | date: 'dd/MM/yyyy'}}</mat-cell>
+    <!-- <mat-cell *matCellDef="let ExecProc">{{ExecProc.ImportDate}}</mat-cell> -->
+  </ng-container>
+  
+  <ng-container  matColumnDef="InitiationDate">
+    <mat-header-cell *matHeaderCellDef>תאריך הגשה</mat-header-cell>
+    <mat-cell *matCellDef="let ExecProc">{{ExecProc.InitiationDate | date: 'dd/MM/yyyy'}}</mat-cell>
+    <!-- <mat-cell *matCellDef="let ExecProc">{{ExecProc.InitiationDate}}</mat-cell> -->
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="tableColumns" class="mat-header-row"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+
+</mat-table>
+</div>

@@ -1,0 +1,194 @@
+#div3 {   
+    width: 362px;
+    height: 125px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid blue;
+    float: right;
+    font-size: large;
+    border-width:362;
+    
+
+}
+#div4 {   
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid black;
+    float: right;
+}
+#div2 {   
+    width: 750px;
+    height: 425px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid black;
+    float: left;
+}
+#div1 {   
+    width: 70px;
+    height: 125px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid black;
+    float: right;
+    color: brown;
+    font-size: large;
+}
+.main1{
+    background-color: white; 
+    /* //#e5e4d7; */
+    margin:10px; 
+    border-radius:5px;
+    padding:20px;
+    overflow: hidden;
+    align-content: right;
+    width: 100%;
+}
+.title{
+    padding:20px;
+    text-align: right;
+    font-size: x-large;
+    color: blueviolet;
+    font-weight:bold;
+}
+.stitle{
+    padding:20px;
+    text-align: right;
+    font-size: x-small;
+    color: brown;
+}
+.conditions{
+    padding-right:10px;
+    padding-top:5px;
+    text-align: right;
+    font-size: large;
+    color:blue;
+    background-color:rosybrown;
+    height: 7%;   
+    opacity: 40%;
+}
+.btn{
+    float: right;
+    /* border: 1px solid black; */
+    /* padding-right:60px; */
+    cursor: pointer;
+    /* background-color:rgba(0,0,0,.5); */
+    color: #fff;
+}
+.inp{
+    color:white;
+    background-color:teal;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+}
+.spiner{
+    float: left;
+    font-size: 16px;
+    padding-right:30px;
+}
+.mat-spinner::ng-deep circle{
+    stroke: #f81515 !important;
+    }
+
+.background-image {
+        opacity: 0.8;
+        filter: alpha(opacity=40); /* For IE8 and earlier */
+    }
+::ng-deep .mat-tooltip {
+    /* your own custom styles here */ 
+    /* e.g. */
+    color: yellow;
+}
+.custom-tooltip {
+    font-size:14px;
+    background-color:rgb(111, 111, 90); 
+    }
+
+    /* .tooltip {
+        display:inline-block;
+        position:relative;
+        border-bottom:1px dotted #666;
+        text-align:left;
+    }
+    .custom-tooltip {
+        font-size:25px;
+     }
+     */
+    /* .tooltip .top {
+        min-width:200px; 
+        top:-20px;
+        left:50%;
+        transform:translate(-50%, -100%);
+        padding:10px 20px;
+        color:#444444;
+        background-color:#EEEEEE;
+        font-weight:normal;
+        font-size:13px;
+        border-radius:8px;
+        position:absolute;
+        z-index:99999999;
+        box-sizing:border-box;
+        box-shadow:0 1px 8px rgba(0,0,0,0.5);
+        display:none;
+    }
+    
+    .tooltip:hover .top {
+        display:block;
+    }
+    
+    .tooltip .top i {
+        position:absolute;
+        top:100%;
+        left:50%;
+        margin-left:-12px;
+        width:24px;
+        height:12px;
+        overflow:hidden;
+    }
+    
+    .tooltip .top i::after {
+        content:'';
+        position:absolute;
+        width:12px;
+        height:12px;
+        left:50%;
+        transform:translate(-50%,-50%) rotate(45deg);
+        background-color:#EEEEEE;
+        box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    } */
+    div.ex1 {
+        float: right;
+        width: 700px;
+        /* margin: auto; */
+        border: 3px solid #73AD21;
+      }
+
+    div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+      }
+      
+      div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+      }
+      
+      div.scrollmenu a:hover {
+        background-color: #777;
+      }
+
+      #divcenter {
+        /* display:flex;
+        justify-content: center;
+        align-items: center; */
+        display: grid;
+  place-content: center;
+      }

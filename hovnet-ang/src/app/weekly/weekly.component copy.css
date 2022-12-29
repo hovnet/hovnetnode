@@ -1,0 +1,86 @@
+#div3 {   
+    width: 362px;
+    height: 125px;
+    margin: 10px;
+    padding: 1px;
+    /* border: 1px solid black; */
+    float: right;
+}
+#div4 {   
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid black;
+    float: right;
+}
+#div2 {   
+    width: 750px;
+    height: 425px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid black;
+    float: left;
+}
+#div1 {   
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+    padding: 1px;
+    border: 1px solid black;
+    float: right;
+    color: brown;
+    font-size: large;
+}
+.main1{
+    background-color: #e5e4d7;
+    margin:10px;
+    border-radius:5px;
+    padding:20px;
+    overflow: hidden;
+    align-content: right;
+    width: 100%;
+}
+.title{
+    padding:20px;
+    text-align: right;
+    font-size: x-large;
+    color: brown;
+}
+.stitle{
+    padding:20px;
+    text-align: right;
+    font-size: x-small;
+    color: brown;
+}
+.conditions{
+    padding-right:10px;
+    padding-top:5px;
+    text-align: right;
+    font-size: large;
+    color:blue;
+    background-color:rosybrown;
+    height: 7%;   
+    opacity: 40%;
+}
+.btn{
+    float: right;
+    /* border: 1px solid black; */
+    /* padding-right:60px; */
+}
+.inp{
+    color:white;
+    background-color:teal;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+}
+.spiner{
+    float: left;
+    font-size: 16px;
+    padding-right:30px;
+}
+.mat-spinner::ng-deep circle{
+    stroke: #f81515 !important;
+    }

@@ -1,0 +1,126 @@
+import { Component, OnInit } from '@angular/core';
+import { PostService } from './post.service';
+import{ GlobalConstants } from './common/global-constants';
+import{ GlobalVars } from './common/Global-Vars';
+// import {jsonxls} from 'node_modules/json2xls/lib/json2xls';    //./node_modules/jsonPosts';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  debtorsCount:number=8;
+  Misrad:any=1;
+  posts:any; posts1:any;
+  jobStarted:string; //start
+  jobEtarted:string; //ended
+  jobDtarted:string; //Dauration
+  tikimLeikul:number; //Dauration
+  jsonPosts:string;
+  jsonPosts1:string;
+  ActionNum:number;
+  SelectedAction:number=0;
+
+  fortesting:string=null;
+  // okay = GlobalVars.aa();
+  constructor(private service:PostService) {
+
+    console.log(GlobalConstants.apiURL);
+  }
+   
+  ngOnInit() {
+
+    this.fortesting=GlobalVars.aa();
+    this. Mezaheh();
+  }
+
+  MainTask()
+  {
+    this. Mezaheh();
+    // this.ss(this.debtorsCount);
+  }
+  GetSpecificAction(){
+    GlobalConstants.GBL = this.posts1; //this.posts1.find(opt => opt.מס_טופס == this.ActionNum);
+    // this.SelectedAction = GlobalConstants.GBL;
+    // console.log('gbl   ',GlobalConstants.GBL);
+    // this.jsonPosts1 = JSON.stringify(GlobalConstants.GBL);
+    // this.jsonPosts1 = GlobalVars.MisparTofes + '  ' + GlobalVars.ShemTofes  + '  ' + GlobalVars.CoteretTofes;
+    // this.jsonPosts1 = JSON.stringify(GlobalVars.Tofes);
+
+    // GlobalConstants.GBL = this.posts1.find(opt => opt.מזהה == this.ActionNum);
+  }
+  Mezaheh(){
+    this.service.getMezaheh(1)    // misrad=1 coming from userprofile
+    .subscribe(response => {
+      if(response != null){
+      this.posts1 = response;
+      console.log('response -->', this.posts1);
+      this.tikimLeikul = this.posts1.length;
+      this.jobDtarted = ((this.calcrunTime())/1000/60).toFixed(3);
+      // this.jsonPosts1 = JSON.stringify(this.posts1);GlobalVars.Tofes
+      // this.jsonPosts1 = JSON.stringify(GlobalVars.Tofes);
+      // console.log('jsonPosts1-->   ',this.jsonPosts1);
+      // console.log('find   ', this.posts1.find(opt => opt.bb == this.ActionNum))
+      }
+    }); 
+  };
+
+  ss(){
+    GlobalConstants.GBL = this.posts1
+    GlobalVars.SetVars(this.ActionNum);
+    this.jsonPosts1 = JSON.stringify(GlobalVars.Tofes);
+    // this.GetSpecificAction();
+    this.jobStarted =  this.getDate();
+    this.service.getPosts(this.debtorsCount)
+    .subscribe(response => {
+      if(response != null){
+      this.posts = response;
+      console.log('response -->', this.posts);
+      this.tikimLeikul = this.posts.length;
+      this.jobDtarted = ((this.calcrunTime())/1000/60).toFixed(3);
+      this.jsonPosts = JSON.stringify(this.posts); 
+      }
+    });
+};
+
+calcrunTime(){
+  this.jobEtarted =  this.getDate();
+  Date.parse(this.jobEtarted)
+  return (Date.parse(this.jobEtarted) - Date.parse(this.jobStarted));
+ }
+
+ formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+  }
+
+  getDate(){
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+    return dateTime;
+
+  }
+
+  // convertToXls(ff:any) {
+  //   var xls = json2xls(ff);
+  //   fs.writeFileSync(GlobalVars.BdikotDir, xls, 'binary', (err) => {
+  //      if (err) {
+  //            console.log("writeFileSync :", err);
+  //       }
+  //     console.log( GlobalVars.BdikotDir + " file is saved!");
+  //  });
+  // }
+  
+  
+}

@@ -1,0 +1,23 @@
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+nav a {
+   display: inline-block;
+   padding: 15px;
+   background: gray;
+   color: white;
+   font-size: larger;
+   /* height: 50%; */
+   line-height: 30%;
+   width: 10%;
+ }
+ .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellowgreen;
+  padding: auto;
+  font-size: 15px;
+  direction: rtl;
+  /* padding-right: 1.7em; */
+  /* position: relative; */
+}

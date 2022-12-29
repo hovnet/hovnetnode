@@ -1,0 +1,1 @@
+ng build --prod --output-path=..\honvet-ang-menu\dist

@@ -1,0 +1,33 @@
+<div dir="rtl">
+
+  <h1>{{title}}</h1>
+  {{ data }}
+  <mat-tab-group #tabGroup (selectedTabChange)="onTabClick($event)">
+    <mat-tab label="פרופיל חייב">
+      <ng-template matTabContent>
+        <app-mis2></app-mis2>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="היסטוריית ההליך">
+      <ng-template matTabContent>
+        <app-tbl></app-tbl>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="עיכוב הליכים">
+      <ng-template matTabContent>
+        <app-mis2></app-mis2>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+<mat-tab-group>
+  <!-- <mat-tab label="פרופיל חייב">View 1</mat-tab>
+  <mat-tab label="היסטוריית ההליך">View 2</mat-tab>
+  <mat-tab label="עיכוב הליכים">View 3</mat-tab>
+</mat-tab-group>
+</div>
+
+<mat-tab label="פרופיל חייב">
+  <ng-template matTabContent>
+    <Mis1Component></mis1>
+  </ng-template>
+</mat-tab> -->

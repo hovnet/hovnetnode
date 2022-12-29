@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+   <mat-toolbar-row  style="direction: rtl;">
+     <button mat-icon-button>
+       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+     </button>
+     <h1 style="font-size:42px;">חובנט</h1>
+     <span class="menu-spacer"></span>
+     <div style="direction: rtl;font-size:36px">
+      <a mat-button [routerLink]="'/accounts'"> התחבר </a>
+      <a mat-button [routerLink]="'/accounts'"> התנתק </a>
+      <a mat-button [routerLink]="'/accounts'"> חשבונות </a>
+      <a mat-button [routerLink]="'/create-account'"> יצירת חשבון חדש </a>
+       <a mat-button [routerLink]="'/contacts'"> אנשי קשר </a>
+       <a mat-button [routerLink]="'/create-contact'"> יצירת איש קשר </a>
+       <a mat-button [routerLink]="'/activities'"> פעילויות </a>
+       <a mat-button [routerLink]="'/create-activity'"> יצירת פעילות חדשה </a>
+     </div>
+   </mat-toolbar-row>
+   <mat-toolbar-row>
+       <span style="font-size: x-large;direction: rtl;">הפעלת הליכים רוחביים בהוצאה לפועל</span>
+   </mat-toolbar-row>
+ </mat-toolbar>
+<div dir="rtl">
+<mat-sidenav-container [ngStyle] = "{ 'position' : sidenav.opened ? 'fixed' : 'relative'}">
+   <mat-sidenav #sidenav>
+     <mat-nav-list style="direction: rtl;">
+       <a mat-list-item [routerLink]="'/accounts'"> עיקולים </a>
+       <a mat-list-item [routerLink]="'/create-account'"> בקשות </a>
+       <a mat-list-item [routerLink]="'/contacts'"> הליכים </a>
+       <a mat-list-item [routerLink]="'/create-contact'"> דוחות ביצוע </a>
+       <a mat-list-item [routerLink]="'/activities'"> דוחות טיוב </a>
+       <a mat-list-item [routerLink]="'/create-activity'"> תחזוקה </a>
+       <a mat-list-item [routerLink]="'/create-activity'"> טבלאות </a>
+       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+     </mat-nav-list>
+   </mat-sidenav>
+   <mat-sidenav-content>
+     <div style="height: 75vh;">
+ 
+       <!-- <router-outlet></router-outlet> -->
+     </div>
+   </mat-sidenav-content>
+ </mat-sidenav-container>
+</div>

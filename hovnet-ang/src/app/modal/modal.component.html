@@ -1,0 +1,89 @@
+<!-- <div class="dialog"> -->
+  <div id="container">
+    <div class="item">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="item">
+        <button mat-button  (click)="close()" >
+          <mat-icon >close</mat-icon>
+        </button>
+    </div>
+</div>
+    <div dir="rtl">
+      <mat-tab-group #tabGroup (selectedTabChange)="onTabClick($event)">
+        <mat-tab label="היסטוריית ההליך">
+          <ng-template matTabContent>
+            <app-tbl [data1] = tblKey></app-tbl>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="פרופיל חייב">
+          <ng-template matTabContent>
+            <app-mis2></app-mis2>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="עיכוב הליכים">
+          <ng-template matTabContent>
+            <app-mis2></app-mis2>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    
+    
+    
+    <!-- <div>
+      <mat-tab-group #tabGroup (selectedTabChange)="onTabClick($event)">
+        <mat-tab label="פרופיל חייב">
+          <ng-template matTabContent>
+            <app-mis2></app-mis2>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="היסטוריית ההליך">
+          <ng-template matTabContent>
+            <app-tabs></app-tabs>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="עיכוב הליכים">
+          <ng-template matTabContent>
+            <app-mis2></app-mis2>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </div> -->
+
+      <!-- <div class="parent"> -->
+    <!-- <div class="left">Left
+
+      <button mat-button  (click)="close()" style ="margin-left: auto">
+        <mat-icon inline=true>close</mat-icon>
+      </button>
+  
+    </div>
+    <div class="fill-remaining-space"></div>
+    <div class="right">Right
+      <h1 style ="margin-right: auto">{{title}}</h1>
+
+
+    </div>
+  </div> -->
+  
+  <!-- <div style ="margin-left: auto"> -->
+    <!-- <div style ="justify-content: space-between;"> -->
+      
+    <!-- <button (click)="close()"><mat-icon>close</mat-icon></button> -->
+      <!-- <mat-icon dir="ltr" (click)="close()">close</mat-icon> -->
+
+    <!-- <button mat-button  (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button> -->
+
+    <!-- <button mat-button  (click)="close()" style ="margin-left: auto">
+      <mat-icon inline=true>close</mat-icon>
+    </button> -->
+
+      <!-- <br> -->
+      <!-- <h1 style ="margin-right: auto">{{title}}</h1>
+    </div> -->
+    <!-- <mat-icon>close</mat-icon> -->
+    <!-- <mat-icon>home</mat-icon> -->
+

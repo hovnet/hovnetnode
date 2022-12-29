@@ -1,0 +1,254 @@
+<br/>
+<p class="title">{{Title}} {{ Tday | date: 'MM/yyyy' }}</p>
+<div class="form-group row" style="padding-right:30px;float: right;font-size: large;">
+    <label for="mhl" style="padding-left:15px;padding-top:10px;color:blue;"> מס חייבים לריצה: </label>
+    <input type="text" style="width: 20px;" [(ngModel)]="debtorsCount"  id="fda" name="fda" Placeholder="הכנס מספר חייבים לריצה נוכחית" size="3" style="padding-top:1px;float: right;color:rgb(11, 11, 11);background-color: burlywood;font-size:larger">
+    <br>
+    <button (click)="setAmount(100)">100</button>
+    <button (click)="setAmount(2000)">2000</button>
+    <button (click)="setAmount(6000)">6000</button>
+    <button (click)="setAmount(50000)">All</button>
+    <label for="Hotslaphyv" style="padding-right:15px;padding-left:5px;padding-top:10px;color:blue;"> פרטני לריצה: </label>
+    <input type="text"  style="padding-right:25px;" [(ngModel)]="Hotslaphyv" id="Hotslaphyv" name="Hotslaphyv" placeholder="0000000000-00" pattern="[0-9]{10}-[0-9]{2}">
+</div>  
+<div class="main1">
+    <!-- <div  class="btn">
+        <br/>
+        <img  mat-raised-button
+        matTooltip="הרץ פעולות"
+        matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/RunP.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="exec()" alt="image">
+        <br/>
+        <mat-progress-bar mode="indeterminate" *ngIf="isWorking"></mat-progress-bar>
+
+        <img  mat-raised-button
+        matTooltip="דוח סריקה לבדיקה"
+        matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/excel.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="ExecDocsBdika()" alt="image">
+        <mat-progress-bar mode="indeterminate" *ngIf="isWork"></mat-progress-bar>
+        <br/>
+        <img  mat-raised-button
+        matTooltip="עידכון בקשות"
+        matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/Updates.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="ExecutActionPost()" alt="image">
+        <mat-progress-bar mode="indeterminate" *ngIf="isWorkU"></mat-progress-bar>
+    </div> -->
+<div id="div1"  class="form-group" style="direction:rtl;width: 360px;height: 130%;text-align: right;padding-right: 0.8cm;margin-right: 3.3vw">
+    <br>
+    <img mat-raised-button
+        matTooltip="בחר הכל"
+        matTooltipPosition="below"  matTooltipClass="custom-tooltip" src="/assets/all.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="SetFullWeek('C')" alt="image">
+    <img mat-raised-button
+        matTooltip="בטל בחירה"
+        matTooltipPosition="below"  matTooltipClass="custom-tooltip" src="/assets/Eall.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="SetFullWeek('NC')" alt="image" >
+    <br><br>
+    <div *ngFor="let input of Prop; let i = index;">
+        <label><input type="checkbox" [(ngModel)]="chk[Prop[i]['MisparTofes']]" name="fyv"  (click)="switchTaf(Prop[i])" />  {{Prop[i]['KoteretTofes']}}({{Prop[i]['MisparTofes']}})</label>
+        <br> <br>
+    </div>
+
+    
+</div>
+
+<div class="btn">
+    <img  mat-raised-button
+    matTooltip="הרץ פעולות"
+    matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/RunP.png" (click)="exec()" alt="image">
+    <mat-progress-bar mode="indeterminate" value="40" *ngIf="isWorking"></mat-progress-bar>
+    <br/>
+    <img  mat-raised-button
+    matTooltip="דוח סריקה לבדיקה"
+    matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/excel.png" (click)="ExecDocsBdika()" alt="image">
+    <mat-progress-bar mode="indeterminate" value="40" *ngIf="isWork"></mat-progress-bar>
+    <br/>
+    <img  mat-raised-button
+    matTooltip="עידכון בקשות"
+    matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/Updates.png" (click)="ExecutActionPost()" alt="image">
+    <mat-progress-bar mode="indeterminate" *ngIf="isWorkU"></mat-progress-bar>
+    <br/>
+</div>
+
+        
+<div id="div3" ondrop="drop(event, 'div3')" ondragover="allowDrop(event, 'div3')"  style="direction:rtl;width: 360px;height: 130%;text-align: right;padding-right: 1.8cm;color: blue;">
+    <!--  -->
+    <form action="/action_page.php">
+        <br/>
+        <label for="fts">תחילת ריצה:</label>
+        <!-- <span>תחילת ריצה<input type="date" [ngModel]="jobStarted"  id="ftr" name="ftr" class="inp"></span> <br> -->
+        <p class="date" style="color:red;font-weight:bold;">{{ jobStarted | date: 'medium' }}</p>
+        
+        <label for="fts">סיום ריצה:</label>
+        <p class="date" style="color:red;font-weight:bold;">{{ jobEtarted | date: 'medium' }}</p>
+
+        <!-- <input [ngModel]="jobEtarted"  id="fts" name="fts" class="inp"> <br> -->
+        
+        <label for="ftm" >משך ריצה:</label>
+        <p class="date" style="color:red;font-weight:bold;">{{ jobDtarted | date:'mm:ss' }}</p>
+
+        <!-- <input [ngModel]="jobDtarted"  id="ftm" name="ftm" class="inp"> <br> -->
+        
+        <label for="fkt">כמות תיקים בהפקה:</label>
+        <p class="date" style="color:red;font-weight:bold;">{{ Results }}</p>
+
+        <!-- <input [(ngModel)]="tikimLeikul"  id="fkt" name="fkt"  class="inp"> <br> -->
+    </form>
+</div>
+</div>
+<!-- <div style="float:inline-end;">
+    <p class="date" style="color:red;font-weight:bold;">{{ jobStarted | date: 'medium'  }}</p>
+    
+    <p class="date" style="color:red;font-weight:bold;">{{ jobEtarted | date: 'medium' }}</p>
+    
+    <p class="date" style="color:red;font-weight:bold;">{{ jobDtarted | date:'mm:ss' }}</p>
+    
+    <p class="date" style="color:red;font-weight:bold;">{{ Results }}</p> -->
+<!-- </div> -->
+<!-- <div>
+    <p style="float: right;padding-right: 20px;">תוצאות ריצה</p>
+    <br/>
+</div> -->
+<!-- <div class="ex1">
+    <mat-grid-list cols="5">
+    <mat-grid-tile [colspan] = "1" [rowspan] = "1">פעולה</mat-grid-tile>
+    <mat-grid-tile [colspan] = "1" [rowspan] = "1">תחילת ריצה</mat-grid-tile>
+    <mat-grid-tile [colspan] = "1" [rowspan] = "1">סיום ריצה</mat-grid-tile>
+    <mat-grid-tile [colspan] = "1" [rowspan] = "1">משך ריצה</mat-grid-tile>
+    <mat-grid-tile [colspan] = "1" [rowspan] = "1">כמות תיקים בהפקה</mat-grid-tile>
+    </mat-grid-list> 
+</div> -->
+
+<!-- </div>
+</div> -->
+
+<!-- <input type="text" style="width: 20px;" [(ngModel)]="debtorsCount"  id="fda" name="fda" Placeholder="הכנס מספר חייבים לריצה נוכחית" maxlength="6"> <br><br> -->
+<!-- <div> -->
+<!-- <div> -->
+<!-- <div style="float: right;"> -->
+
+<!-- <mat-grid-list cols="5" rowHeight="100px" gutterSize="15px"> -->
+
+<!-- <input [ngModel]="jobEtarted"  id="fts" name="fts" class="inp"> <br> -->
+<!-- <input [ngModel]="jobDtarted"  id="ftm" name="ftm" class="inp"> <br> -->
+<!-- </div>    -->
+
+<!-- <div  class="ex1">
+<br/>
+<label for="fts">תחילת ריצה:</label> 
+<label for="fts">סיום ריצה:</label>
+<label for="fts">סיום ריצה:</label>
+<label for="ftm" >משך ריצה:</label>
+<label for="fkt">כמות תיקים בהפקה:</label>
+
+</div>
+-->
+
+<!-- <span>תחילת ריצה<input type="date" [ngModel]="jobStarted"  id="ftr" name="ftr" class="inp"></span> <br> -->
+
+<!-- </div> -->
+<!-- <button (click)="SetFullWeek()">הפק דוח לבדיקה</button> -->
+<!-- <div class="btn btn-primary tooltip">Hover Me to Preview
+<div class="top">
+<h3>Lorem Ipsum</h3>
+<p>Dolor sit amet, consectetur adipiscing elit.</p>
+<i></i>
+</div>
+</div> -->
+
+<!-- <label style="padding-right:20px;color:blue;font-weight:bold;"><input type="checkbox"  (click)="SetFullWeek()"/> הכל</label> -->
+<!-- <button style="cursor: pointer;color:blue;font-weight:bold;" (click)="SetFullWeek()">הכל</button> -->
+<!-- <div class="tooltip"> -->
+<!-- <div class="tooltip"> -->
+<!-- <div class="ex1"> {{ jobStarted | date: 'medium'  }}
+<h3>Using nothing</h3>
+<mat-grid-list cols="4">
+<mat-grid-tile>A</mat-grid-tile>
+<mat-grid-tile>B</mat-grid-tile>
+<mat-grid-tile>C</mat-grid-tile>
+<mat-grid-tile>D</mat-grid-tile>
+</mat-grid-list>
+</div> -->
+<!-- <h3>Using gutterSize</h3>
+<mat-grid-list cols="4" rowHeight="25px" gutterSize="5px">
+<mat-grid-tile>A</mat-grid-tile>
+<mat-grid-tile>B</mat-grid-tile>
+<mat-grid-tile>C</mat-grid-tile>
+<mat-grid-tile>D</mat-grid-tile>
+</mat-grid-list>
+
+<h3>Using rowspan and colspan</h3>
+<mat-grid-list cols="4" rowHeight="50px">
+<mat-grid-tile rowspan="2">A</mat-grid-tile>
+<mat-grid-tile rowspan="2">B</mat-grid-tile>
+<mat-grid-tile rowspan="2">C</mat-grid-tile>
+<mat-grid-tile colspan="4">D</mat-grid-tile>
+</mat-grid-list>
+
+
+<h3>Grid List of Cards</h3>
+<mat-grid-list cols="2" rowHeight="50px">
+<mat-grid-tile *ngFor="let card of cards"> 
+<mat-grid-tile>
+<mat-card class="my-card">
+<mat-card-title>אריק לוי</mat-card-title>
+<mat-card-content>
+שלום רב משפחת לוי
+</mat-card-content>
+</mat-card> 
+</mat-grid-tile>
+</mat-grid-list>-->
+
+<!-- <div  class="btn"> -->
+<!-- <mat-spinner  [diameter]="32" class="mat-spinner" *ngIf="isWorking"></mat-spinner> -->
+<!-- <mat-progress-bar mode="indeterminate" *ngIf="isWorkingD"></mat-progress-bar>
+<br/> -->
+<!-- <button (click)="ExecutAction()">החל ריצה</button> -->
+<!-- <button (click)="ExecDocsBdika()">הפק דוח לבדיקה</button>
+<br/> -->
+<!-- <button (click)="ExecutAction()">החל ריצה</button> -->
+<!-- <button (click)="ExecutActionPost()">עדכן פעולות לסביבת טסט</button>
+</div> -->
+
+<!-- <div  class="btn">
+<img  mat-raised-button
+matTooltip="הרץ פעולות"
+matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/RunP.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="exec()" alt="image">
+<br/>
+<mat-progress-bar mode="indeterminate" *ngIf="isWorking"></mat-progress-bar>
+
+<div style="padding-right:30px;float: right;font-size:xx-small;"> -->
+<!-- <img  mat-raised-button
+matTooltip="דוח סריקה לבדיקה"
+matTooltipPosition="below" matTooltipClass="custom-tooltip" src="/assets/excel.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="ExecDocsBdika()" alt="image">
+
+</div> -->
+
+<!-- <img src="/assets/RunP.png" style="cursor: pointer; background-color:rgba(0,0,0,.5);color: #fff;" (click)="exec()" alt="image"> -->
+<!-- <img src="/assets/Run.png" style="cursor: pointer;" (click)="ExecutAction()" alt="image"> -->
+<!-- <button (click)="ExecutAction()" >החל ריצה</button> -->
+<!-- <br/> -->
+<!-- <br> -->
+<!-- <form> -->
+<!-- <input type="checkbox"  name="all" style="float: right;" >
+<label style="padding-right:20px;color:blue;font-weight:bold;" for="fhy">הכל</label> -->
+<!-- <label for="fhy">{{Prop[i]['KoteretTofes']}}({{Prop[i]['MisparTofes']}})<span *ngIf="IsEnded">בוצע</span></label> -->
+<!-- <input type="checkbox" [(ngModel)]="chk[Prop[i]['MisparTofes']]" name="fyv" style="float: right;" (click)="switchTaf(Prop[i]['MisparTofes'], Prop[i]['KoteretTofes'])"> -->
+
+<!-- <input type="checkbox" [(ngModel)]="chk[Prop[i]['MisparTofes']]" name="fyv" style="float: right;" (click)="switchTaf(Prop[i])">
+<label style="padding-right:20px" for="fhy">{{Prop[i]['KoteretTofes']}}({{Prop[i]['MisparTofes']}})</label> -->
+<!-- </form> -->
+
+<!-- <form action="/action_page.php"> -->
+
+<!-- <br>
+<div  class="btn">
+<button (click)="switchWeek()">הפק את כל פעולות השבוע הנוכחי</button>
+<br><br>
+</div>
+-->
+<!-- <mat-spinner  [diameter]="32" class="mat-spinner" *ngIf="isWorking"></mat-spinner> -->
+<!-- <button (click)="ExecutAction()">החל ריצה</button>
+<br/> -->
+<!-- <div class="user-icon" [tooltip]="'Sign In'"> -->
+<!-- </div> -->
+<!-- <img src="/assets/Run.png" style="cursor: pointer;" (click)="ExecutAction()" alt="image"> -->
+<!-- <button (click)="ExecutAction()" >החל ריצה</button> -->
+<!-- </div> -->
+<!-- <button (click)="ExecDocsBdika()">הפק דוח לבדיקה</button> -->
+

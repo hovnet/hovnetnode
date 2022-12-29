@@ -1,0 +1,40 @@
+.selected {
+   background-color: red;
+ }
+ .highlight{
+   background: #42A948; /* green */
+ }
+ .mat-header-row {
+   position: sticky;
+   top: 0;
+   background-color: inherit;
+   font-size: xx-large;
+   height: 0.5em;
+}
+.mat-header-cell{
+   font-size: medium;
+}
+
+.mat-row{
+   height:fit-content;
+}
+TT{
+   padding-top:15px;}
+
+table {
+   width: 100%;
+   overflow-x: auto;
+   overflow-y: hidden;
+   min-width: 500px;
+}
+.sticky {
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   background-color: yellow;
+   padding: 50px;
+   font-size: 20px;
+   direction: rtl;
+   padding-right: 1.7em;
+   /* position: relative; */
+ }

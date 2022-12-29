@@ -1,0 +1,116 @@
+
+<!-- <div [ngStyle]="applyStyles()">  style="color:antiquewhite" -->
+  <div style="background-color:aquamarine;padding-right: 1.7em;">
+    <!-- </div> -->
+    br
+      <div class="form-group row">
+        <!-- <input class="form-control col-md-6" type="text"> -->
+        <span class="input-group-addon"> מספר חייבים  </span>
+        <input [(ngModel)]="debtorsCount" Placeholder="הכנס מספר חייבים לריצה נוכחית"  name="dd">
+        <span class="input-group-addon"> מספר פעולה  </span>
+        <input [(ngModel)]="ActionNum" Placeholder="הכנס פעולה"  name="dd1">
+        <span class="input-group-addon"> מספר הוצלפ  </span>
+        <input [(ngModel)]="hotzlap" Placeholder="הכנס הוצלפ"  name="dd2">
+        <span class="input-group-addon">------- </span>
+        <button (click)="SelectHayavimLeIkul()">לחץ להתחלה ריצה</button>
+        <button (click)="psDocBdika()">לחץ להפקת דוח לבדיקה</button>
+        <button style="background-color:darkcyan;" (click)="ps()">לחץ לעידכון תוצאות</button>
+        <button style="background-color:darkcyan;" (click)="pIkuv()">לחץ לעידכון תוצאות</button>
+        <button style="background-color:darkcyan;" (click)="pTikim()">עידכון לפרטי תיקים</button>
+        <!-- <button (click)="NewRechv()">ריצת רכב חדשה</button> -->
+
+    
+      <div class="form-group row" style="padding-right:75px">
+         <button (click)="SetTikCount(20)">20</button>
+         <button (click)="SetTikCount(100)">100</button>
+         <button (click)="SetTikCount(1000)">1000</button>
+         <button (click)="SetTikCount(9000000)">All</button>
+         <!-- <span>--------------------</span> -->
+         <!-- <div style="width:300px; float:left;">
+          <mat-spinner *ngIf="isWorking" ></mat-spinner>
+        </div> -->
+
+      </div>  
+      <div style="width:300px; float:left;">
+        <mat-spinner *ngIf="isWorking" ></mat-spinner>
+      </div>
+
+      
+         <div style="float:right:">
+
+         <button (click)="Setact(1)"> 1 רכב  </button>
+         <br>
+
+         <button (click)="Setact(2)"> 2 מינהל</button>
+         <br>
+
+         <button (click)="Setact(3)"> 3 מעמ</button>
+         <br>
+          <button (click)="Setact(4)"> 4 מס הכנסה</button>
+          <br>
+          <button (click)="Setact(9)"> 9 מימושי מדיה</button>
+          <br>
+          <button (click)="Setact(62)">  62 מימושי מדיה - בתי משפט </button>
+           <br>
+         <button (click)="Setact(5)">  5 צווי מידע - הכנסות</button>
+         <br>
+         <button (click)="Setact(6)"> 6 צווי מידע - מקרקעין</button>
+         <br>
+         <button (click)="Setact(10)">  10 הגבלות</button>
+         <br>
+         <button style="background-color:darkcyan;"  (click)="Setact(11)"> 11 בנקים</button>
+         <br>
+         <button style="background-color:darkcyan;" (click)="Setact(00)"> חקירת יכולת</button>
+         <br>
+         <button style="background-color:darkcyan;" (click)="Setact(00)"> צווי הבאה</button>
+         <br>
+         <button style="background-color:darkcyan;" (click)="Setact(00)"> עיקול רישום מטלטלין </button>
+         <br>
+         <button style="background-color:darkcyan;" (click)="Setact(00)"> שינוי חשבון בנק הוצלפ</button>
+         <br>
+         <button style="background-color:darkcyan;" (click)="Setact(00)"> צווי מידע - כתובות</button>
+       </div>
+      </div>    
+<h4>
+
+<form id="ar">
+  <br>
+  <div>
+ </div>
+  <br>
+
+<div  style="width:800px;">
+  <div style="width:300px; float:left;">
+    <mat-spinner *ngIf="isWorking" ></mat-spinner>
+  </div>
+  <div style="color:darkred;text-align:right;width:300px; float:right;">
+  תחילת ריצה    {{jobStarted}}  
+  <br>
+  סיום ריצה      {{jobEtarted}}   
+  <br>
+  משך ריצה       {{jobDtarted}}   
+  <br>
+
+  כמות תיקים לפעולה  
+  {{tikimLeikul}} 
+  </div>
+</div>
+<div style="clear: both;"></div>
+
+
+<br>
+<div style="color:palevioletred;text-align:right;">
+  <!-- פרופיל פעולה -->
+  <br>
+  <!-- {{jsonPosts1}} -->
+</div> 
+
+<br>
+<div style="color:green;text-align:right;">
+  תוצאות סריקת חייבים
+  <br>
+{{jsonPosts}}   
+</div>
+</form>
+</h4>
+</div>

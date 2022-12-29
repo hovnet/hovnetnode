@@ -1,0 +1,94 @@
+
+<!-- <div [ngStyle]="applyStyles()">  style="color:antiquewhite" -->
+  <form style="background-color:bisque">
+<div style="background-color:bisque">
+      <!-- </div> -->
+        <div class="form-group row" style="padding-right:75px;padding-top:30px">
+        <br>
+            <div class="dir:rtl"> תיקים  </div>
+        <br>
+        <div>
+            <button (click)="Setact(36)">תיקים-  פתוח עדכני - סגור הוצלפ</button>
+            <button (click)="Setact(37)">תיקים-  סגור עדכני - פתוח הוצלפ</button>
+            <!-- <button (click)="Setact(4)">עיקולי מטלטלין</button>
+            <button (click)="Setact(4)">צווי הבאה</button> -->
+        </div>
+        </div>
+        <div class="form-group row" style="padding-right:75px;padding-top:20px">
+        <br>
+        <div class="input-group-addon"> חייבים  </div>
+        <br>
+        <button (click)="Setact(38)">חייבים עדכנית לא באיחוד והוצלפ קיים תיק חלוקה</button>
+        <button (click)="Setact(39)">חייבים - עדכנית עם תיק חלוקה הוצלפ ללא תיקי חלוקה</button>
+        <!-- חייביםע ללא מסירה,הוצ עם מסירה -->
+        <button (click)="Setact(40)">עדכנית ללא מסירה הוצלפ עם מסירה</button>
+        <button (click)="Setact(41)">עדכנית עם מסירה הוצלפ ללא מסירה</button>
+        <button (click)="Setact(42)">עדכנית ללא עיכוב הליכים הוצלפ עם עיכוב הליכים</button>
+        <button (click)="Setact(46)">עדכנית עם עיכוב הליכים הוצלפ ללא עיכוב הליכים</button>
+        <!-- <button (click)="Setact(6)">עדכנית אחר הוצלפ עיכוב הליכים</button> -->
+        <button (click)="Setact(7)">תז שגוי</button>
+      </div>
+        <div class="form-group row" style="padding-right:75px;padding-top:20px">
+          <!-- <input class="form-control col-md-6" type="text"> -->
+          <!-- <span class="input-group-addon"> מספר חייבים  </span>
+          <input [(ngModel)]="debtorsCount" Placeholder="הכנס מספר חייבים לריצה נוכחית"  name="dd"> -->
+          <span class="input-group-addon"> מספר דוח  </span>
+          <input [(ngModel)]="ActionNum" Placeholder="הכנס דוח"  name="dd1">
+          <!-- <span class="input-group-addon">------- </span> -->
+          <button (click)="psDoc()">לחץ להפקת דוח</button>
+          <!-- <button (click)="psDocBdika()">לחץ להפקת דוח לבדיקה</button>
+          <button (click)="ps()">לחץ לעידכון תוצאות</button> -->
+        </div>  
+        <div class="form-group row" style="padding-right:75px">
+           <!-- <button (click)="SetTikCount(20)">20</button>
+           <button (click)="SetTikCount(100)">100</button>
+           <button (click)="SetTikCount(1000)">1000</button>
+           <button (click)="SetTikCount(9000000)">All</button>
+           <span>--------------------</span> -->
+        <!-- </div> -->
+        <!-- <div class="form-group row" style="padding-right:300px"> -->
+           <!-- <button (click)="Setact(5)">תיקים-  פתוח עדכני - סגור הוצלפ</button>
+           <button (click)="Setact(2)">תיקים-  סגור עדכני - פתוח הוצלפ</button>
+           <button (click)="Setact(3)">עיקולי משכורת</button>
+           <button (click)="Setact(4)">עיקולי מטלטלין</button>
+           <button (click)="Setact(4)">צווי הבאה</button> -->
+        </div>    
+        <div class="form-group row" style="padding-right:75px;padding-top:30px">
+
+  <!-- <h4> -->
+      <!-- <form id="ar"> -->
+      <!-- <p>מספר חייבים</p>
+        <input [(ngModel)]="debtorsCount" Placeholder="הכנס מספר חייבים לריצה נוכחית"  name="dd">
+        <br>
+        <p>מספר פעולה</p>
+  
+        <form id="ar1">
+          <input [(ngModel)]="ActionNum" Placeholder="הכנס פעולה"  name="dd1">
+        
+              <br><br>
+  <button (click)="ss()">לחץ להתחלה ריצה</button> -->
+  <!-- <br> -->
+        </div>
+
+        <div style="width:300px; float:left;">
+          <mat-spinner *ngIf="isWorking" ></mat-spinner>
+        </div>
+        
+        <div class="form-group row" style="padding-right:75px;padding-top:30px;text-align: right;">
+        תחילת ריצה    {{jobStarted}}  
+        <br>
+        סיום ריצה      {{jobEtarted}}   
+        <br>
+        משך ריצה       {{jobDtarted}}   
+        <br>
+        כמות תיקים לפעולה  
+        {{tikimLeikul}} 
+        נתוני תיקים לדוח  
+        {{DocData}} 
+        <br>
+        <!-- </h4> -->
+        </div>
+        <!-- </div> -->
+</div>
+</form>
+  
